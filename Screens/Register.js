@@ -1,23 +1,21 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image, Button, Styles, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 
-import { Neomorph } from 'react-native-neomorph-shadows';
-import { Shadow } from 'react-native-neomorph-shadows';
 // import Logo from '../assets/logo.png';
 
+// import {firebase} from '../Firebase/firebase';
 import BackIcon from 'react-native-vector-icons/Feather';
 
-const Register = ({ navigation }) => {
 
-    function navigate(){
-        navigation.navigate('Login');
-    }
     
+const Register = ({ navigation }) => {
+    function navigate(){
+        navigation.navigate('Home', 'Register');
+    }
+
     return (
         
        <View style={styles.mainView}>
-       
-       
             <View style={styles.TopView}>
                 <Image 
                     style={styles.formLogo} 
@@ -26,7 +24,7 @@ const Register = ({ navigation }) => {
             </View>
             
             <ScrollView style={styles.BottomView}>
-                 <BackIcon onPress={navigate} style={styles.back} name="chevron-left" size={30} color={'#fff'}/>
+                 <BackIcon onClick={'click'} style={styles.back} name="chevron-left" size={30} color={'#fff'}/>
                 <Text style={styles.formHeader}>
                     Register 
                     {/* {'\n'} 
@@ -48,7 +46,7 @@ const Register = ({ navigation }) => {
                                 placeholder="Email*" 
                                 style={styles.TextInput}/>
                             <TextInput 
-                                type="number" 
+                                type="phoneNumber" 
                                 placeholderTextColor={"#fff"}
                                 placeholder="Contact Number*" 
                                 style={styles.TextInput}/>
@@ -65,13 +63,13 @@ const Register = ({ navigation }) => {
                                 secureTextEntry={true}
                                 style={styles.TextInput}/>
                                 
-                                <TouchableOpacity style={styles.touchable}>
+                                <TouchableOpacity style={styles.touchable} onPress={navigate}>
                                     <Text style={styles.texts}>
                                         Register
                                     </Text>
                                 </TouchableOpacity>
                                 <Text> Register Using </Text>
-                        </View>
+                                         </View>
              </ScrollView>
        </View>
           

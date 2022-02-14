@@ -1,9 +1,8 @@
 import React from 'react';
 import {SafeAreaView, Button, StyleSheet, View, Text, TextInput, Image, TouchableOpacity} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
 
 // import Logo from '../assets/logo.png';
 
@@ -32,7 +31,8 @@ const Login = ({ navigation }) => {
                             <TouchableOpacity style={styles.logTxt} onPress={navigate}>
                                 <Text style={styles.loginText}>Already Have An Account? Login Now!</Text>
                         </TouchableOpacity>
-                            
+                        
+                        <KeyboardAvoidingView>
                     <View style={styles.container}>
                               <View style={styles.sectionStyle}>
                                 <Image
@@ -65,6 +65,7 @@ const Login = ({ navigation }) => {
                              
                             </View>
                     </View>   
+                    </KeyboardAvoidingView>
                             <TouchableOpacity style={styles.LoginButton} onPress={navigate}>
                                       <Text style={styles.buttonText}>
                                        Login
@@ -145,9 +146,9 @@ const Login = ({ navigation }) => {
     BottomView: {
         width: '100%',
         height: '70%',
-        // backgroundColor: '#2f2f2f',
-        borderTopLeftRadius:10,
-        borderTopRightRadius: 10
+        backgroundColor: '#2f2f2f',
+        borderTopLeftRadius:50,
+        borderTopRightRadius: 50
     },
     sectionStyle: {
       flexDirection: 'row',
@@ -195,11 +196,12 @@ const Login = ({ navigation }) => {
         
     },
     logTxt: {
+      color: '#fff'
         
     },
     loginText:{
         textAlign: 'center',
-        color: '#000'
+        color: '#fff'
     },
     
     Footer:{
