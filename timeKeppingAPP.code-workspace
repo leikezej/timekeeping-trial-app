@@ -5,6 +5,9 @@
 		}
 	],
 	"settings": {
-		"git.ignoreLimitWarning": true
+		"git.ignoreLimitWarning": true,
+		"projectManager.git.baseFolders": [
+			"base github folders"
+		]
 	}
 }

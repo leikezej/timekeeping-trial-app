@@ -4,6 +4,9 @@ import Login from './Screens/Logins';
 import Register from './Screens/Register';
 import HomeScreen from './Screens/HomeScreen';
 import TimeSheet from './Screens/TimeSheet';
+import TimeIn from './Screens/TimeIn';
+import TimeOut from './Screens/TimeOut';
+
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -17,7 +20,6 @@ function App () {
             <Stack.Navigator>
                 <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
                 <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
-                {/* <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} /> */}
                 <Stack.Screen
                   name="Home"
                   component={HomeScreen}
@@ -25,6 +27,8 @@ function App () {
                   options={{ headerShown: false }}
                 />
                 <Stack.Screen name="TimeSheet" component={TimeSheet} options={{ headerShown: false }} />
+                <Stack.Screen name="TimeOut" component={TimeOut} options={{ headerShown: false }} />
+                <Stack.Screen name="TimeIn" component={TimeIn} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     );

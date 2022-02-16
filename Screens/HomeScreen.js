@@ -1,20 +1,16 @@
 import React from 'react';
 import { Text, Button, View, styles, StyleSheet } from 'react-native';
+import { Col, Grid } from "react-native-easy-grid";
+
 
 const HomeScreen = ({ navigation }) => {
   function navigate(){
     navigation.navigate('TimeSheet');
 }
-    
     return (
-        <View>  
-            <View>
-              <Text>
-                  Home SWEET HOME
-              </Text>
-            </View>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor:'powderblue'}}>  
           <Button 
-              title="Go to Screen1"  
+              title="Go to TimeSheet Screen"  
               onPress={() => navigation.navigate('TimeSheet')}  
         />  
         </View>
@@ -22,11 +18,8 @@ const HomeScreen = ({ navigation }) => {
 }
 
 const style = StyleSheet.create({
-  button:  {
-    width: '50%',
-    height: '25%',
-    alignItems: 'center',
-    justifyContent: 'center'
+  buttonHome:  {
+    width: '50%'
   }
 });
 
