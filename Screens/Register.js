@@ -1,174 +1,267 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image, Button, Styles, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import {SafeAreaView, Button, ScrollView, StyleSheet, View, Text, TextInput, Image, TouchableOpacity} from 'react-native';
+
+import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
 
 // import Logo from '../assets/logo.png';
 
-// import {firebase} from '../Firebase/firebase';
-import BackIcon from 'react-native-vector-icons/Feather';
-
-
-    
 const Register = ({ navigation }) => {
-    function navigate(){
-        navigation.navigate('Home', 'Register');
-    }
 
+    function navigate(){
+        navigation.navigate('Home');
+    } 
     return (
-        
-       <View style={styles.mainView}>
-            <View style={styles.TopView}>
+      <SafeAreaView style={{flex: 1}}>
+      
+      <View style={styles.TopView}>
                 <Image 
                     style={styles.formLogo} 
-                    source={{uri: 'https://i.postimg.cc/y8smt4yb/logo1.png'}} 
+                    source={{uri: 'https://i.postimg.cc/8Cw4CsFw/Time-Keeper-logo2.png'}} 
                 />
             </View>
-            
+
             <ScrollView style={styles.BottomView}>
-                 <BackIcon onClick={'click'} style={styles.back} name="chevron-left" size={30} color={'#fff'}/>
-                <Text style={styles.formHeader}>
-                    Register 
-                    {/* {'\n'} 
-                    Back!  */}
-                </Text>
-                
-                <TouchableOpacity style={styles.regTxt} onPress={navigate}>
+            
+                        <Text style={styles.formHeader}>
+                                Register 
+                                {/* {'\n'} 
+                                Back!  */}
+                            </Text>
+                            <TouchableOpacity style={styles.regTxt} onPress={navigate}>
                                 <Text style={styles.registerText}>Already Have An Account? Login Now!</Text>
                         </TouchableOpacity>
-                        <View style={styles.FormView}>
-                           <TextInput 
-                                type="text" 
-                                placeholderTextColor={"#fff"}
-                                placeholder="Full Name*" 
-                                style={styles.TextInput}/>
-                           <TextInput 
-                                type="email" 
-                                placeholderTextColor={"#fff"}
-                                placeholder="Email*" 
-                                style={styles.TextInput}/>
-                            <TextInput 
-                                type="phoneNumber" 
-                                placeholderTextColor={"#fff"}
-                                placeholder="Contact Number*" 
-                                style={styles.TextInput}/>
-                             <TextInput 
-                                type="password" 
-                                placeholderTextColor={"#fff"}
-                                secureTextEntry={true}
-                                placeholder="Password*" 
-                                style={styles.TextInput}/>
-                           <TextInput 
-                                type="password" 
-                                placeholderTextColor={"#fff"}
-                                placeholder="Confirm Password*"
-                                secureTextEntry={true}
-                                style={styles.TextInput}/>
+                        
+                        <KeyboardAvoidingView>
+                    <View style={styles.container}>
+                              <View style={styles.sectionStyle}>
+                                <Image
+                                  source={{
+                                    uri:
+                                      'https://img.icons8.com/ios/50/000000/user--v1.png',
+                                  }}
+                                  style={styles.imageStyle}
+                                />
+                                <TextInput
+                                  style={{flex: 1}}
+                                  placeholder="Full Name"
+                                />
+                              </View>
+                <View style={styles.sectionStyle}>
+                                <Image
+                                  source={{
+                                  uri:
+                                    'https://img.icons8.com/ios/50/000000/email-sign.png',
+                                    }}
+                                  style={styles.imageStyle}
+                                />
+                                <TextInput
+                                  style={{flex: 1}}
+                                  placeholder="Email Address"
+                                  secureTextEntry={true}
+                                />
+                            </View>
+                <View style={styles.sectionStyle}>
+                                <Image
+                                  source={{
+                                  uri:
+                                    'https://img.icons8.com/ios/50/000000/cell-phone.png',
+                                    }}
+                                  style={styles.imageStyle}
+                                />
+                                <TextInput
+                                  style={{flex: 1}}
+                                  placeholder="Contact Number"
+                                  secureTextEntry={true}
+                                />
+                            </View>
+                <View style={styles.sectionStyle}>
+                                <Image
+                                  source={{
+                                  uri:
+                                    'https://img.icons8.com/ios/50/000000/lock--v2.png',
+                                    }}
+                                  style={styles.imageStyle}
+                                />
+                                <TextInput
+                                  style={{flex: 1}}
+                                  placeholder="Enter Your Password"
+                                  secureTextEntry={true}
+                                />
+                            </View>
+                <View style={styles.sectionStyle}>
+                                <Image
+                                  source={{
+                                  uri:
+                                    'https://img.icons8.com/ios/50/000000/forgot-password.png',
+                                    }}
+                                  style={styles.imageStyle}
+                                />
+                                <TextInput
+                                  style={{flex: 1}}
+                                  placeholder="Confirm Password"
+                                  secureTextEntry={true}
+                                />
+                            </View>
+                    </View>   
+                       </KeyboardAvoidingView>
+                            <TouchableOpacity style={styles.RegisterButton} onPress={navigate}>
+                                      <Text style={styles.buttonText}>
+                                       Register
+                                      </Text>
+                            </TouchableOpacity>
+                                <Text style={styles.socialDivider}>
+                                    OR Use
+                                </Text>
+                              <View style={styles.Footer}>
+                                 <Image
+                                   source={{
+                                    uri:
+                                      'https://img.icons8.com/ios/50/000000/google-logo--v1.png',
+                                     }}
+                                  style={styles.ggSocial}
+                                />
                                 
-                                <TouchableOpacity style={styles.touchable} onPress={navigate}>
-                                    <Text style={styles.texts}>
-                                        Register
-                                    </Text>
-                                </TouchableOpacity>
-                                <Text> Register Using </Text>
-                                         </View>
-             </ScrollView>
-       </View>
-          
-    )
-};
-
-const styles = StyleSheet.create({
-    mainView:{
-        marginTop: 5,
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#fff'
-        
-    },
-    back: {
-        marginTop: 20,
-        paddingLeft: 5
+                                <Image
+                                   source={{
+                                    uri:
+                                      'https://img.icons8.com/ios/50/000000/facebook-new.png',
+                                     }}
+                                  style={styles.imageSocial}
+                                />
+                                
+                                <Image
+                                   source={{
+                                    uri:
+                                      'https://img.icons8.com/ios/50/000000/github--v1.png',
+                                     }}
+                                  style={styles.imageSocial}
+                                />
+                                <Image
+                                   source={{
+                                    uri:
+                                      'https://img.icons8.com/ios/50/000000/sms.png',
+                                     }}
+                                  style={styles.imageSocial}
+                                />
+                        </View>
+            </ScrollView>
+    </SafeAreaView>
+    );
+  };
+  
+  const styles = StyleSheet.create({
+    container: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      margin: 1
+      
     },
     TopView: {
         width: '100%',
-        height: '20%',
+        height: '25%',
         justifyContent: 'center',
         alignItems: 'center',
         display: 'flex',
-        // marginTop: 30
-    },
-    regInput: {
-        textAlign: 'center',
-        color: '#fff'
-    },  
-    BottomView: {
-        marginTop: 0,
-        width: '100%',
-        height: '80%',
-        backgroundColor: '#2f2f2f',
-        borderTopLeftRadius:30,
-        borderTopRightRadius: 30
+        backgroundColor: '#c5c5c5',
+        marginTop: 5,
+        // borderTopRightRadius: 90,
+        borderTopLeftRadius: 120,
+        borderBottomEndRadius: 120,
+        // borderBottomStartRadius: 90
     },
     formLogo: {
         width: '100%',
-        height: '100%',
+        height: '70%',
         justifyContent: 'center',
         alignItems: 'center',
-        resizeMode: 'contain',
+        resizeMode: 'contain'
+        
     },
     formHeader:{
-        marginTop: 0,
-        color: 'red',
+        color: '#000',
         fontWeight: 'bold',
-        fontSize: 45,
+        fontSize: 40,
         textAlign: 'center',
-        fontStyle: 'italic',
-        letterSpacing: 1,
+        letterSpacing: 1
     }, 
-    FormView:{
-        // backgroundColor: '#000',
+    BottomView: {
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
         width: '100%',
-        height: '45%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        marginTop: 20,
+        height: '75%',
+        backgroundColor: '#c5c5c5',
+    },
+    sectionStyle: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderWidth: 2,
+      height: 55,
+      borderRadius: 10,
+      margin: 12
+    },
+    imageStyle: {
+      padding: 10,
+      margin: 5,
+      height: 40,
+      width: 40,
+      resizeMode: 'stretch',
+      alignItems: 'center'
+    },
+    imageSocial:{
+        height: 50,
+        width: 50,
+        margin: 5,
         marginTop: 5
-    
     },
-    TextInput: {
-        width: '90%',
-        color: '#eee',
-        borderWidth: 1,
-        height: 60,
-        borderColor: '#fff',
-        paddingLeft: 5,
-        borderRadius: 10,
-        marginTop: 30
+    buttonText: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: '#fff',
+     
     },
-    touchable:{
+    RegisterButton: {
         width: '90%',
-        color: '#eee',
+        color: '#000',
         height: 55,
-        backgroundColor: '#fff',
+        marginLeft: 18,
+        backgroundColor: '#000',
         borderRadius: 10,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 15
+        marginTop: 10
+        
     },
-    texts:{
-        fontWeight: 'bold',
-        fontSize: 18
+    regTxt: {
+      color: '#fff'
+        
     },
-    regTxt:{
-        alignItems: 'center'
+    registerText:{
+        textAlign: 'center',
+        color: '#000'
     },
-    registerText: {
+    Footer:{
+        display: 'flex',
+        flexDirection: 'row',
         alignItems: 'center',
-        color: '#fff'
+        justifyContent: 'center',
+        textAlign: 'center'
     },
-   
-});
-
-export default Register;
+    socialDivider: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 3,
+        marginTop: 20,
+        color: '#000',
+        textAlign: 'center'
+    },
+    ggSocial:{
+      width: 50,
+      height: 50,
+    }
+    
+  });
+  
+  export default Register;

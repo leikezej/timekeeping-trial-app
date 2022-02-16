@@ -1,7 +1,6 @@
 import React from 'react';
 import {SafeAreaView, Button, StyleSheet, View, Text, TextInput, Image, TouchableOpacity} from 'react-native';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
 import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
 
 // import Logo from '../assets/logo.png';
@@ -17,7 +16,7 @@ const Login = ({ navigation }) => {
       <View style={styles.TopView}>
                 <Image 
                     style={styles.formLogo} 
-                    source={{uri: 'https://i.postimg.cc/y8smt4yb/logo1.png'}} 
+                    source={{uri: 'https://i.postimg.cc/8Cw4CsFw/Time-Keeper-logo2.png' }} 
                 />
             </View>
 
@@ -38,21 +37,20 @@ const Login = ({ navigation }) => {
                                 <Image
                                   source={{
                                     uri:
-                                      'https://img.icons8.com/color/48/000000/user.png',
+                                      'https://img.icons8.com/ios/50/000000/user--v1.png',
                                   }}
                                   style={styles.imageStyle}
                                 />
                                 <TextInput
                                   style={{flex: 1}}
                                   placeholder="Enter Your Name Here"
-                                  underlineColorAndroid="transparent"
                                 />
                               </View>
-                              <View style={styles.sectionStyle}>
+                <View style={styles.sectionStyle}>
                                 <Image
                                   source={{
                                   uri:
-                                    'https://img.icons8.com/fluency/48/000000/password--v1.png',
+                                    'https://img.icons8.com/ios/50/000000/lock--v2.png',
                                     }}
                                   style={styles.imageStyle}
                                 />
@@ -60,7 +58,7 @@ const Login = ({ navigation }) => {
                                   style={{flex: 1}}
                                   placeholder="Enter Your Password"
                                   secureTextEntry={true}
-                                  underlineColorAndroid="transparent"
+                                  // underlineColorAndroid="transparent"
                                 />
                              
                             </View>
@@ -73,14 +71,22 @@ const Login = ({ navigation }) => {
                             </TouchableOpacity>
                                 
                                 <Text style={styles.socialDivider}>
-                                    OR 
+                                    OR Use
                                 </Text>
                                 
                               <View style={styles.Footer}>
                                  <Image
                                    source={{
                                     uri:
-                                      'https://img.icons8.com/color/48/000000/google-logo.png',
+                                      'https://img.icons8.com/ios/50/000000/google-logo--v1.png',
+                                     }}
+                                  style={styles.ggSocial}
+                                />
+                                
+                                <Image
+                                   source={{
+                                    uri:
+                                      'https://img.icons8.com/ios/50/000000/facebook-new.png',
                                      }}
                                   style={styles.imageSocial}
                                 />
@@ -88,26 +94,17 @@ const Login = ({ navigation }) => {
                                 <Image
                                    source={{
                                     uri:
-                                      'https://img.icons8.com/color/48/000000/facebook-new.png',
-                                     }}
-                                  style={styles.imageSocial}
-                                />
-                                
-                                <Image
-                                   source={{
-                                    uri:
-                                      'https://img.icons8.com/color/48/000000/github--v1.png',
+                                      'https://img.icons8.com/ios/50/000000/github--v1.png',
                                      }}
                                   style={styles.imageSocial}
                                 />
                                 <Image
                                    source={{
                                     uri:
-                                      'https://img.icons8.com/external-prettycons-flat-prettycons/47/000000/external-sms-connections-prettycons-flat-prettycons.png',
+                                      'https://img.icons8.com/ios/50/000000/sms.png',
                                      }}
                                   style={styles.imageSocial}
                                 />
-                                
                         </View>
                     </View>
             </SafeAreaView>
@@ -116,17 +113,24 @@ const Login = ({ navigation }) => {
   
   const styles = StyleSheet.create({
     container: {
-      marginTop: 40,
+      marginTop: 30,
       justifyContent: 'center',
       alignItems: 'center',
-      margin: 1,
+      margin: 1
     },
     TopView: {
         width: '100%',
-        height: '30%',
+        height: '25%',
         justifyContent: 'center',
         alignItems: 'center',
         display: 'flex',
+        backgroundColor: '#c5c5c5',
+        marginTop: 8,
+        // borderRadius: 50,
+        borderTopRightRadius: 120,
+        borderBottomStartRadius: 120
+        // borderBottomLeftRadius: 20,
+        // borderBottomRightRadius: 20
     },
     formLogo: {
         width: '100%',
@@ -136,17 +140,17 @@ const Login = ({ navigation }) => {
         resizeMode: 'contain',
     },
     formHeader:{
-        color: 'red',
+        color: '#000',
         fontWeight: 'bold',
         fontSize: 40,
         textAlign: 'center',
-        fontStyle: 'italic',
-        letterSpacing: 1,
+        letterSpacing: 1
     }, 
     BottomView: {
         width: '100%',
-        height: '70%',
-        backgroundColor: '#2f2f2f',
+        marginTop: 10,
+        height: '75%',
+        backgroundColor: '#c5c5c5',
         borderTopLeftRadius:50,
         borderTopRightRadius: 50
     },
@@ -154,13 +158,10 @@ const Login = ({ navigation }) => {
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#fff',
-      borderWidth: 0.5,
-      borderColor: '#000',
-      height: 70,
-      borderRadius: 10,
-      margin: 10,
-      fontSize: 20
+      borderWidth: 2,
+      height: 60,
+      borderRadius: 15,
+      margin: 16
     },
     imageStyle: {
       padding: 10,
@@ -171,10 +172,10 @@ const Login = ({ navigation }) => {
       alignItems: 'center'
     },
     imageSocial:{
-        height: 60,
-        width: 60,
-        padding: 15,
-        margin: 10
+        height: 50,
+        width: 50,
+        margin: 5,
+        marginTop: 5
     },
     buttonText: {
         fontSize: 25,
@@ -201,9 +202,8 @@ const Login = ({ navigation }) => {
     },
     loginText:{
         textAlign: 'center',
-        color: '#fff'
+        color: '#000'
     },
-    
     Footer:{
         display: 'flex',
         flexDirection: 'row',
@@ -213,11 +213,17 @@ const Login = ({ navigation }) => {
     },
     socialDivider: {
         fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 3,
         marginTop: 20,
         color: '#000',
         textAlign: 'center'
+    },
+    ggSocial:{
+      width: 50,
+      height: 50,
     }
-
+    
   });
   
   export default Login;
