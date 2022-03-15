@@ -1,8 +1,6 @@
 import React from 'react';
 import {SafeAreaView, Button, ScrollView, StyleSheet, View, Text, TextInput, Image, TouchableOpacity} from 'react-native';
 
-import { NeuView, NeuButton, NeuInput   } from 'react-native-neu-element';
-
 import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
 
 // import Logo from '../assets/logo.png';
@@ -15,14 +13,15 @@ const Register = ({ navigation }) => {
     return (
       <SafeAreaView style={{flex: 1}}>
       
-      {/* <View style={styles.TopView}>
+      <View style={styles.TopView}>
                 <Image 
                     style={styles.formLogo} 
                     source={{uri: 'https://i.postimg.cc/8Cw4CsFw/Time-Keeper-logo2.png'}} 
                 />
-            </View> */}
+            </View>
 
             <ScrollView style={styles.BottomView}>
+            
                         <Text style={styles.formHeader}>
                                 Register 
                                 {/* {'\n'} 
@@ -34,7 +33,7 @@ const Register = ({ navigation }) => {
                         
                         <KeyboardAvoidingView>
                     <View style={styles.container}>
-                              {/* <View style={styles.sectionStyle}>
+                              <View style={styles.sectionStyle}>
                                 <Image
                                   source={{
                                     uri:
@@ -60,68 +59,56 @@ const Register = ({ navigation }) => {
                                   placeholder="Email Address"
                                   secureTextEntry={true}
                                 />
-                            </View> */}
-
-
-                            <NeuInput
-                                      color={'#eef2f9'}
-                                      width= {350}
-                                      height={55}
-                                      borderRadius={16} 
-                                      borderColor={'#ffffff'}
-                                      placeholder={'Full Name'}
-                                      style={{marginBottom: 30}}
-                                    />
-                            <NeuInput
-                                      color={'#eef2f9'}
-                                      width= {350}
-                                      height={55}
-                                      borderRadius={16} 
-                                      borderColor={'#ffffff'}
-                                      placeholder={'Email Address'}
-                                      style={{marginBottom: 30}}
-                                    />
-                            <NeuInput
-                                      color={'#eef2f9'}
-                                      width= {350}
-                                      height={55}
-                                      borderRadius={16} 
-                                      borderColor={'#ffffff'}
-                                      placeholder={'Contact Number'}
-                                      style={{marginBottom: 30}}
-                                    />
-                            <NeuInput
-                                      color={'#eef2f9'}
-                                      width= {350}
-                                      height={55}
-                                      borderRadius={16} 
-                                      borderColor={'#ffffff'}
-                                      placeholder={'Password *****'}
-                                      style={{marginBottom: 30}}
-                                    />
-                            <NeuInput
-                                      color={'#eef2f9'}
-                                      width= {350}
-                                      height={55}
-                                      borderRadius={16} 
-                                      borderColor={'#ffffff'}
-                                      placeholder={'Confitm Password'}
-                                      style={{marginBottom: 30}}
-                                    />
-              </View>
+                            </View>
+                <View style={styles.sectionStyle}>
+                                <Image
+                                  source={{
+                                  uri:
+                                    'https://img.icons8.com/ios/50/000000/cell-phone.png',
+                                    }}
+                                  style={styles.imageStyle}
+                                />
+                                <TextInput
+                                  style={{flex: 1}}
+                                  placeholder="Contact Number"
+                                  secureTextEntry={true}
+                                />
+                            </View>
+                <View style={styles.sectionStyle}>
+                                <Image
+                                  source={{
+                                  uri:
+                                    'https://img.icons8.com/ios/50/000000/lock--v2.png',
+                                    }}
+                                  style={styles.imageStyle}
+                                />
+                                <TextInput
+                                  style={{flex: 1}}
+                                  placeholder="Enter Your Password"
+                                  secureTextEntry={true}
+                                />
+                            </View>
+                <View style={styles.sectionStyle}>
+                                <Image
+                                  source={{
+                                  uri:
+                                    'https://img.icons8.com/ios/50/000000/forgot-password.png',
+                                    }}
+                                  style={styles.imageStyle}
+                                />
+                                <TextInput
+                                  style={{flex: 1}}
+                                  placeholder="Confirm Password"
+                                  secureTextEntry={true}
+                                />
+                            </View>
+                    </View>   
                        </KeyboardAvoidingView>
-                       <NeuButton
-                               onPress={navigate}
-                                  color={'#eef2f9'}
-                                  width={200}
-                                  height={50}
-                                  borderRadius={16}
-                                  // justifyContent={'center'}
-                                  style={{marginLeft: 90, marginTop: 50}}>
-                                      <Text style={styles.buttonTexts}>
-                                        Register
+                            <TouchableOpacity style={styles.RegisterButton} onPress={navigate}>
+                                      <Text style={styles.buttonText}>
+                                       Register
                                       </Text>
-                              </NeuButton> 
+                            </TouchableOpacity>
                                 <Text style={styles.socialDivider}>
                                     OR Use
                                 </Text>
@@ -175,7 +162,7 @@ const Register = ({ navigation }) => {
         justifyContent: 'center',
         alignItems: 'center',
         display: 'flex',
-        backgroundColor: '#e0e5ec',
+        backgroundColor: '#c5c5c5',
         marginTop: 5,
         // borderTopRightRadius: 90,
         borderTopLeftRadius: 120,
@@ -187,9 +174,7 @@ const Register = ({ navigation }) => {
         height: '70%',
         justifyContent: 'center',
         alignItems: 'center',
-        resizeMode: 'contain',
-        backgroundColor: '#e0e5ec'
-        
+        resizeMode: 'contain'
         
     },
     formHeader:{
@@ -197,9 +182,7 @@ const Register = ({ navigation }) => {
         fontWeight: 'bold',
         fontSize: 40,
         textAlign: 'center',
-        letterSpacing: 1,
-        
-        // marginBottom: 50,
+        letterSpacing: 1
     }, 
     BottomView: {
         borderTopLeftRadius: 40,
@@ -207,7 +190,7 @@ const Register = ({ navigation }) => {
         width: '100%',
         marginTop: 20,
         height: '75%',
-        backgroundColor: '#ebf5fc',
+        backgroundColor: '#c5c5c5',
     },
     sectionStyle: {
       flexDirection: 'row',
@@ -216,7 +199,6 @@ const Register = ({ navigation }) => {
       borderWidth: 2,
       height: 55,
       borderRadius: 10,
-      color: '#e0e5ec',
       margin: 12
     },
     imageStyle: {
@@ -241,7 +223,7 @@ const Register = ({ navigation }) => {
     },
     RegisterButton: {
         width: '90%',
-        color: 'cyan',
+        color: '#000',
         height: 55,
         marginLeft: 18,
         backgroundColor: '#000',
@@ -258,8 +240,7 @@ const Register = ({ navigation }) => {
     },
     registerText:{
         textAlign: 'center',
-        color: '#000',
-        marginBottom: 50
+        color: '#000'
     },
     Footer:{
         display: 'flex',

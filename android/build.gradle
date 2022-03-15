@@ -40,6 +40,3 @@ allprojects {
         maven { url 'https://www.jitpack.io' }
     }
 }
-	dependencies {
-		implementation 'com.github.User:Repo:Tag'
-	}

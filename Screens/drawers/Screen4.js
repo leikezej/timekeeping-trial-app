@@ -2,15 +2,15 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 
-function Screen1(props) {
+function Screen4(props) {
     return (
         <View>    
             <Text>  
-            Screen1
+            Screen4
             </Text>
         </View>
     );
 }
 
 
-export default Screen1;
+export default Screen4;
