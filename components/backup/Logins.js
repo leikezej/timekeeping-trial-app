@@ -1,40 +1,39 @@
 import React from 'react';
-import {SafeAreaView, Button, ScrollView, StyleSheet, View, Text, TextInput, Image, TouchableOpacity} from 'react-native';
-
-import { NeuView, NeuButton, NeuInput   } from 'react-native-neu-element';
+import {SafeAreaView, Button, StyleSheet, View, Text, TextInput, Image, TouchableOpacity} from 'react-native';
 
 import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
 
 // import Logo from '../assets/logo.png';
 
-const Register = ({ navigation }) => {
+const Login = ({ navigation }) => {
 
     function navigate(){
-        navigation.navigate('Home');
+        navigation.navigate('Register');
     } 
     return (
       <SafeAreaView style={{flex: 1}}>
       
-      {/* <View style={styles.TopView}>
+      <View style={styles.TopView}>
                 <Image 
                     style={styles.formLogo} 
-                    source={{uri: 'https://i.postimg.cc/8Cw4CsFw/Time-Keeper-logo2.png'}} 
+                    source={{uri: 'https://i.postimg.cc/8Cw4CsFw/Time-Keeper-logo2.png' }} 
                 />
-            </View> */}
+            </View>
 
-            <ScrollView style={styles.BottomView}>
+            <View style={styles.BottomView}>
+            
                         <Text style={styles.formHeader}>
-                                Register 
+                                Login 
                                 {/* {'\n'} 
                                 Back!  */}
                             </Text>
-                            <TouchableOpacity style={styles.regTxt} onPress={navigate}>
-                                <Text style={styles.registerText}>Already Have An Account? Login Now!</Text>
+                            <TouchableOpacity style={styles.logTxt} onPress={navigate}>
+                                <Text style={styles.loginText}>Already Have An Account? Login Now!</Text>
                         </TouchableOpacity>
                         
                         <KeyboardAvoidingView>
                     <View style={styles.container}>
-                              {/* <View style={styles.sectionStyle}>
+                              <View style={styles.sectionStyle}>
                                 <Image
                                   source={{
                                     uri:
@@ -44,87 +43,37 @@ const Register = ({ navigation }) => {
                                 />
                                 <TextInput
                                   style={{flex: 1}}
-                                  placeholder="Full Name"
+                                  placeholder="Enter Your Name Here"
                                 />
                               </View>
                 <View style={styles.sectionStyle}>
                                 <Image
                                   source={{
                                   uri:
-                                    'https://img.icons8.com/ios/50/000000/email-sign.png',
+                                    'https://img.icons8.com/ios/50/000000/lock--v2.png',
                                     }}
                                   style={styles.imageStyle}
                                 />
                                 <TextInput
                                   style={{flex: 1}}
-                                  placeholder="Email Address"
+                                  placeholder="Enter Your Password"
                                   secureTextEntry={true}
+                                  // underlineColorAndroid="transparent"
                                 />
-                            </View> */}
-
-
-                            <NeuInput
-                                      color={'#eef2f9'}
-                                      width= {350}
-                                      height={55}
-                                      borderRadius={16} 
-                                      borderColor={'#ffffff'}
-                                      placeholder={'Full Name'}
-                                      style={{marginBottom: 30}}
-                                    />
-                            <NeuInput
-                                      color={'#eef2f9'}
-                                      width= {350}
-                                      height={55}
-                                      borderRadius={16} 
-                                      borderColor={'#ffffff'}
-                                      placeholder={'Email Address'}
-                                      style={{marginBottom: 30}}
-                                    />
-                            <NeuInput
-                                      color={'#eef2f9'}
-                                      width= {350}
-                                      height={55}
-                                      borderRadius={16} 
-                                      borderColor={'#ffffff'}
-                                      placeholder={'Contact Number'}
-                                      style={{marginBottom: 30}}
-                                    />
-                            <NeuInput
-                                      color={'#eef2f9'}
-                                      width= {350}
-                                      height={55}
-                                      borderRadius={16} 
-                                      borderColor={'#ffffff'}
-                                      placeholder={'Password *****'}
-                                      style={{marginBottom: 30}}
-                                    />
-                            <NeuInput
-                                      color={'#eef2f9'}
-                                      width= {350}
-                                      height={55}
-                                      borderRadius={16} 
-                                      borderColor={'#ffffff'}
-                                      placeholder={'Confitm Password'}
-                                      style={{marginBottom: 30}}
-                                    />
-              </View>
-                       </KeyboardAvoidingView>
-                       <NeuButton
-                               onPress={navigate}
-                                  color={'#eef2f9'}
-                                  width={200}
-                                  height={50}
-                                  borderRadius={16}
-                                  // justifyContent={'center'}
-                                  style={{marginLeft: 90, marginTop: 50}}>
-                                      <Text style={styles.buttonTexts}>
-                                        Register
+                             
+                            </View>
+                    </View>   
+                    </KeyboardAvoidingView>
+                            <TouchableOpacity style={styles.LoginButton} onPress={navigate}>
+                                      <Text style={styles.buttonText}>
+                                       Login
                                       </Text>
-                              </NeuButton> 
+                            </TouchableOpacity>
+                                
                                 <Text style={styles.socialDivider}>
                                     OR Use
                                 </Text>
+                                
                               <View style={styles.Footer}>
                                  <Image
                                    source={{
@@ -157,17 +106,17 @@ const Register = ({ navigation }) => {
                                   style={styles.imageSocial}
                                 />
                         </View>
-            </ScrollView>
-    </SafeAreaView>
+                    </View>
+            </SafeAreaView>
     );
   };
   
   const styles = StyleSheet.create({
     container: {
+      marginTop: 30,
       justifyContent: 'center',
       alignItems: 'center',
       margin: 1
-      
     },
     TopView: {
         width: '100%',
@@ -175,49 +124,44 @@ const Register = ({ navigation }) => {
         justifyContent: 'center',
         alignItems: 'center',
         display: 'flex',
-        backgroundColor: '#e0e5ec',
-        marginTop: 5,
-        // borderTopRightRadius: 90,
-        borderTopLeftRadius: 120,
-        borderBottomEndRadius: 120,
-        // borderBottomStartRadius: 90
+        backgroundColor: '#c5c5c5',
+        marginTop: 8,
+        // borderRadius: 50,
+        borderTopRightRadius: 120,
+        borderBottomStartRadius: 120
+        // borderBottomLeftRadius: 20,
+        // borderBottomRightRadius: 20
     },
     formLogo: {
         width: '100%',
-        height: '70%',
+        height: '80%',
         justifyContent: 'center',
         alignItems: 'center',
         resizeMode: 'contain',
-        backgroundColor: '#e0e5ec'
-        
-        
     },
     formHeader:{
         color: '#000',
         fontWeight: 'bold',
         fontSize: 40,
         textAlign: 'center',
-        letterSpacing: 1,
-        
-        // marginBottom: 50,
+        letterSpacing: 1
     }, 
     BottomView: {
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
         width: '100%',
-        marginTop: 20,
+        marginTop: 10,
         height: '75%',
-        backgroundColor: '#ebf5fc',
+        backgroundColor: '#c5c5c5',
+        borderTopLeftRadius:50,
+        borderTopRightRadius: 50
     },
     sectionStyle: {
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
       borderWidth: 2,
-      height: 55,
-      borderRadius: 10,
-      color: '#e0e5ec',
-      margin: 12
+      height: 60,
+      borderRadius: 15,
+      margin: 16
     },
     imageStyle: {
       padding: 10,
@@ -239,9 +183,9 @@ const Register = ({ navigation }) => {
         color: '#fff',
      
     },
-    RegisterButton: {
+    LoginButton: {
         width: '90%',
-        color: 'cyan',
+        color: '#000',
         height: 55,
         marginLeft: 18,
         backgroundColor: '#000',
@@ -252,14 +196,13 @@ const Register = ({ navigation }) => {
         marginTop: 10
         
     },
-    regTxt: {
+    logTxt: {
       color: '#fff'
         
     },
-    registerText:{
+    loginText:{
         textAlign: 'center',
-        color: '#000',
-        marginBottom: 50
+        color: '#000'
     },
     Footer:{
         display: 'flex',
@@ -283,4 +226,4 @@ const Register = ({ navigation }) => {
     
   });
   
-  export default Register;
+  export default Login;

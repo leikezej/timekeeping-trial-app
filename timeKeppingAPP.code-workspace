@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"projectManager.git.baseFolders": [
+			"base github folders"
+		]
+	}
+}

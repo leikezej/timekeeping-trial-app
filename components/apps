@@ -1,0 +1,77 @@
+
+import * as React from 'react';
+import { Button, View, Text, style, styles, StyleSheet } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+
+
+function Login({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        onPress={() => navigation.navigate('Register')}
+        title="Go to Register"
+      />
+    </View>
+  );
+}
+
+
+function Register({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        onPress={() => navigation.navigate('HomeScreen')}
+        title="Go to HomeScreen"
+      />
+    </View>
+  );
+}
+
+
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View>
+            <Text>
+                Welcome to TimeSheet SCREEN
+            </Text>
+        </View>
+      <Button
+        onPress={() => navigation.navigate('TimeSheet')}
+        title="Go to TimeSheet"
+      />
+    </View>
+  );
+}
+
+
+function TimeSheet({ navigation }) {
+        return (
+            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor:'red'}}>   
+                <View>
+                    <Text>
+                        Welcome to SCREEN SCREEN
+                    </Text>
+                </View>
+                <Button 
+                    title="Go to Screen1"  
+                    onPress={() => navigation.navigate('Screen1')}  
+            />  
+            </View>
+        );
+    }
+
+
+const Drawer = createDrawerNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Screen1" component={Screen1} />
+        <Drawer.Screen name="Screen2" component={Screen2} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+}
